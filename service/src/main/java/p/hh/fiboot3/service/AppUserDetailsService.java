@@ -17,6 +17,7 @@ public class AppUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
+        System.out.println("loadUserByUsername " + username);
         User user = userDao.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException(username);

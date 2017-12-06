@@ -12,11 +12,9 @@ import p.hh.fiboot3.service.AppUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    AppUserDetailsService appUserDetailsService;
+    AppUserDetailsService appUserDetailsService = new AppUserDetailsService();
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -28,10 +26,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated()
+        http.authorizeRequests().antMatchers("/webjars/**").permitAll()
+                .and()
+                .authorizeRequests().anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
-                .defaultSuccessUrl("/page1")
+                .defaultSuccessUrl("/welcome")
                 .failureUrl("/login?error=true")
                 .and()
 

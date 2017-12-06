@@ -28,6 +28,18 @@
         </dependency>
 
         <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+
+        <dependency>
             <groupId>p.hh.fiboot3</groupId>
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>

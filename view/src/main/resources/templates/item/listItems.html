@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <table data-toggle="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th data-sortable="true">name</th>
+                <th data-sortable="true">dateCreated</th>
+                <th data-sortable="true">dateUpdated</th>
+                <th data-sortable="true">item type</th>
+                <th data-sortable="true">owner</th>
+                <th>view/edit</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item: ${items}">
+                    <td></td>
+                    <td>${item.name}</td>
+                    <td>${item.dateCreated.format('dd/MM/yyyy')}</td>
+                    <td>${item.dateUpdated.format('dd/MM/yyyy')}</td>
+                    <td>${item.class.simpleName}</td>
+                    <td>${item.owner.username}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
