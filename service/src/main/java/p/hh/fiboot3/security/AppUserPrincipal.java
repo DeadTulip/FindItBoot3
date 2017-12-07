@@ -2,6 +2,7 @@ package p.hh.fiboot3.security;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import p.hh.fiboot3.domain.User;
@@ -9,6 +10,7 @@ import p.hh.fiboot3.domain.User;
 import java.util.Collection;
 
 @AllArgsConstructor
+@Data
 public class AppUserPrincipal implements UserDetails {
     private User appUser;
 

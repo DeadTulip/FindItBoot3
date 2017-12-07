@@ -4,6 +4,8 @@
 </head>
 <body>
     <div th:fragment="header">
+        <span th:text="${username}" ></span>
+        <p th:text="${session.user}" th:unless="${session == null}">[...]</p>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -18,7 +20,10 @@
                             <li>Add Physical Item</li>
                         </ul>
                     </li>
-                    <li class="${listItemActive}"><span class="glyphicon glyphicon-th-list"></span> List Items</li>
+                    <li class="${listItemActive}">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        <a th:href="@{/order/listItems}" /> List Items
+                    </li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -31,6 +36,12 @@
                 </ul>
             </div>
         </nav>
+
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            var username = /*[[${username}]]*/;
+            /*]]>*/
+        </script>
     </div>
 </body>
 </html>

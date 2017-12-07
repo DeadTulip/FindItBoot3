@@ -1,20 +1,8 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>FindItBoot3</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script type="application/javascript" src="/webjars/jquery/3.2.1/jquery.min.js"></script>
-    <script type="application/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="component/_head :: head">
+
 </head>
 <body>
-<div th:replace="common/header :: header"></div>
-<div class="container">
-    <p th:if="${loginError}" class="error">Wrong user or password</p>
-    <form th:action="@{/login}" method="post" class="form-signin">
-        <h2 class="form-signin-heading">Sign in</h2>
-        <input type="text" id="username" name="username" autofocus="autofocus" class='formLogin form-control'/>
-        <input type="password" id="password" name="password" class='formLogin form-control'/>
-        <input type="submit" value="Log in" />
-    </form>
-</div>
+<div th:replace="component/_login :: loginForm"></div>
 </body>
 </html>

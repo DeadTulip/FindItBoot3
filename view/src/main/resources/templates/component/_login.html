@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div th:fragment="loginForm">
+    <div id="loginForm" class="container">
+        <form th:action="@{/login}" method="post" class="form-signin">
+            <h2 class="form-signin-heading">Sign in</h2>
+            <input type="text" id="username" name="username" autofocus="autofocus" class='formLogin form-control' v-model="username"/>
+            <input type="password" id="password" name="password" class='formLogin form-control' v-model="password"/>
+            <input type="submit" class="btn btn-primary" :disabled="!hasInput" value="Log in" />
+        </form>
+    </div>
+    <script type="text/javascript" th:src="@{/js/component/_login.js}"></script>
+</div>
+</body>
+</html>
